@@ -16,3 +16,6 @@
 
 # sqlite db
 internet_forum
+
+# log files
+*.log
