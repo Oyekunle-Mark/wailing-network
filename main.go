@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	p("ChitChat", version(), "started at", config.Address)
+	p("Internet Forum", version(), "started at", config.Address)
 
 	// handle static assets
 	mux := http.NewServeMux()
