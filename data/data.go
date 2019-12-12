@@ -17,9 +17,11 @@ var Db *sql.DB
 func init() {
 	var err error
 	Db, err = sql.Open("sqlite3", "internet_forum")
+
 	if err != nil {
 		log.Fatal(err)
 	}
+
 	return
 }
 
