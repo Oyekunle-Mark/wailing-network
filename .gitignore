@@ -13,3 +13,12 @@
 
 # Dependency directories (remove the comment below to include it)
 # vendor/
+
+# sqlite db
+internet_forum
+
+# log files
+*.log
+
+# the executatble
+wailing-network
