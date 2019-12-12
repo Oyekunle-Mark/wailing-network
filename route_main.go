@@ -11,6 +11,7 @@ import (
 func err(writer http.ResponseWriter, request *http.Request) {
 	vals := request.URL.Query()
 	_, err := session(writer, request)
+
 	if err != nil {
 		generateHTML(writer, vals.Get("msg"), "layout", "public.navbar", "error")
 	} else {
@@ -20,10 +21,12 @@ func err(writer http.ResponseWriter, request *http.Request) {
 
 func index(writer http.ResponseWriter, request *http.Request) {
 	threads, err := data.Threads()
+
 	if err != nil {
 		error_message(writer, request, "Cannot get threads")
 	} else {
 		_, err := session(writer, request)
+		
 		if err != nil {
 			generateHTML(writer, threads, "layout", "public.navbar", "index")
 		} else {
