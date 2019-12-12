@@ -19,3 +19,6 @@ internet_forum
 
 # log files
 *.log
+
+# the executatble
+wailing-network
