@@ -7,14 +7,16 @@ import (
 	"fmt"
 	"log"
 
-	_ "github.com/lib/pq"
+	// the sqlite3 driver
+	_ "github.com/mattn/go-sqlite3"
 )
 
+// Db is the sql db connection
 var Db *sql.DB
 
 func init() {
 	var err error
-	Db, err = sql.Open("postgres", "dbname=chitchat sslmode=disable")
+	Db, err = sql.Open("sqlite", "dbname=internet_forum")
 	if err != nil {
 		log.Fatal(err)
 	}
