@@ -13,11 +13,6 @@ func main() {
 	files := http.FileServer(http.Dir(config.Static))
 	mux.Handle("/static/", http.StripPrefix("/static/", files))
 
-	//
-	// all route patterns matched here
-	// route handler functions defined in other files
-	//
-
 	// index
 	mux.HandleFunc("/", index)
 	// error
@@ -44,5 +39,6 @@ func main() {
 		WriteTimeout:   time.Duration(config.WriteTimeout * int64(time.Second)),
 		MaxHeaderBytes: 1 << 20,
 	}
+
 	server.ListenAndServe()
 }
